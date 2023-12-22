@@ -54,7 +54,7 @@ export default function Index() {
                   {appConfig.samplePhrases.map((phrase) => (
                     <button
                       key={phrase}
-                      onClick={() => sendMessage(phrase, chatHistory)}
+                      onClick={() => sendMessage(phrase, chatHistory)} // 찾았다. 사용자의 입력을 보내는 함수.
                       className="bg-gray-100 border-gray-300 border-2 rounded-lg p-4"
                     >
                       {phrase}

@@ -12,7 +12,7 @@ export function getChatStream(
   const ctrl = new AbortController();
 
   const { send, stream, close } = getResponseStream();
-
+  // 서버측에서 이벤트를 생성하고 보내는 로직
   fetchEventSource("https://api.openai.com/v1/chat/completions", {
     onmessage: (event) => {
       const { data } = event;
