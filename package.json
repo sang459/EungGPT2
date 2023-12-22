@@ -20,7 +20,7 @@
     "react-markdown": "^8.0.6",
     "remark-gfm": "^3.0.1",
     "langchain": "^0.0.211",
-    "@pinecone-database/pincone": "^1.1.2"
+    "@pinecone-database/pinecone": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^18.15.7",
