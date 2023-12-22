@@ -5,7 +5,7 @@ import { appConfig } from "../../config.edge.ts";
 
 import { Pinecone } from "@pinecone-database/pinecone";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { PineconeStore } from "langchain/vectorstores/pinecone";
+import { PineconeStore } from "@langchain-community/vectorstores/pinecone";
 
 if (!appConfig.OPENAI_API_KEY || !appConfig.PINECONE_API_KEY || !appConfig.PINECONE_ENVIRONMENT || !appConfig.PINECONE_INDEX) {
   throw new Error(
