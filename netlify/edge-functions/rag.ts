@@ -4,9 +4,7 @@ import { getChatStream, sanitizeMessages } from "../../lib/edge/openai.ts";
 import { appConfig } from "../../config.edge.ts";
 
 import { Pinecone } from "@pinecone-database/pinecone";
-import { VectorDBQAChain } from "langchain/chains";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { OpenAI } from "langchain/llms/openai";
 import { PineconeStore } from "langchain/vectorstores/pinecone";
 
 if (!appConfig.OPENAI_API_KEY || !appConfig.PINECONE_API_KEY || !appConfig.PINECONE_ENVIRONMENT || !appConfig.PINECONE_INDEX) {
