@@ -64,6 +64,7 @@ export function useChat() {
     // message를 받아서, /api/rag에 보내고 응답 기다리기.
 
     let doc = "";
+    let newHistory=[];
 
     // src/hooks/use-chat.ts 파일 내부
 
@@ -80,7 +81,7 @@ export function useChat() {
     .then(text => {
       // 벡터 서치 결과(doc) 반환됨
       doc = text;
-      const newHistory = [
+      newHistory = [
         ...chatHistory,
         { role: "user", content: doc+message } as const, // doc + user message
       ];

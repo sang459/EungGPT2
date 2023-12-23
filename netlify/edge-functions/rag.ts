@@ -3,9 +3,9 @@ import { getChatStream, sanitizeMessages } from "../../lib/edge/openai.ts";
 
 import { appConfig } from "../../config.edge.ts";
 
-import { Pinecone } from "@pinecone-database/pinecone";
-import { OpenAIEmbeddings } from "langchain/embeddings/openai";
-import { PineconeStore } from "@langchain-community/vectorstores/pinecone";
+// import { Pinecone } from "@pinecone-database/pinecone";
+// import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+// import { PineconeStore } from "@langchain-community/vectorstores/pinecone";
 
 if (!appConfig.OPENAI_API_KEY || !appConfig.PINECONE_API_KEY || !appConfig.PINECONE_ENVIRONMENT || !appConfig.PINECONE_INDEX) {
   throw new Error(
@@ -16,6 +16,7 @@ if (!appConfig.OPENAI_API_KEY || !appConfig.PINECONE_API_KEY || !appConfig.PINEC
     
 */
 
+/*
 // Pincone, vectorstore 세팅
 // 여러번 하지 않게 하는 로직 추가해야함
 const pinecone = new Pinecone();
@@ -24,6 +25,7 @@ const vectorStore = await PineconeStore.fromExistingIndex(
   new OpenAIEmbeddings(),
   { pineconeIndex }
 );
+*/
 
 export default async function handler(
   request: Request,
@@ -62,17 +64,20 @@ export const config: Config = {
 };
 
 async function performVectorSearch(data: any) {
-    const results = await vectorStore.maxMarginalRelevance(data, {
-      k: 1,
-      fetchK: 10, // Default value for the number of initial documents to fetch for reranking.
-      // You can pass a filter as well
-      // filter: {},
-    });
+  /*
+  const results = await vectorStore.maxMarginalRelevance(data, {
+    k: 1,
+    fetchK: 10, // Default value for the number of initial documents to fetch for reranking.
+    // You can pass a filter as well
+    // filter: {},
+  });
 
-    if (results && results.length > 0) {
-      console.log(results);
-      return results[0].page_content; // 이거 맞나...
-    } else {
-      return "";
-    }
+  if (results && results.length > 0) {
+    console.log(results);
+    return results[0].page_content; // 이거 맞나...
+  } else {
+    return "";
   }
+  */
+ return "gdgd";
+}
