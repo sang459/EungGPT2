@@ -7,9 +7,9 @@ import { appConfig } from "../../config.edge.ts";
 // import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 // import { PineconeStore } from "@langchain-community/vectorstores/pinecone";
 
-if (!appConfig.OPENAI_API_KEY || !appConfig.PINECONE_API_KEY || !appConfig.PINECONE_ENVIRONMENT || !appConfig.PINECONE_INDEX) {
+if (!appConfig.OPENAI_API_KEY) {
   throw new Error(
-    "OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_ENVIRONMENT, and PINECONE_INDEX must be set in config.edge.ts"
+    "OPENAI_API_KEY must be set in config.edge.ts"
   );
 }
 /*
